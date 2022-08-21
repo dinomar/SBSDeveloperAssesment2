@@ -1,0 +1,39 @@
+﻿<Window x:Class="SBSDeveloperAssesment2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SBSDeveloperAssesment2"
+        mc:Ignorable="d"
+        Title="SBS Developer Assessment" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <MenuItem Header="File">
+                <MenuItem x:Name="btnOpenDirectory" Header="Select directory" Click="btnOpenDirectory_Click"></MenuItem>
+                <MenuItem x:Name="btnExit" Header="Exit" Click="btnExit_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <DataGrid x:Name="dataGrid" Grid.Row="1" Grid.Column="0" Margin="5"></DataGrid>
+
+        <StackPanel Margin="5" Grid.Row="1" Grid.Column="1">
+            <Label Content="Exclude:"/>
+            <StackPanel Orientation="Horizontal" Margin="0, 5, 0, 0">
+                <TextBox x:Name="txtBoxFilter" Width="140" Margin="0, 0, 10, 0"></TextBox>
+                <Button x:Name="btnAddFilter" Width="34" Content="Add" Click="btnAddFilter_Click"></Button>
+            </StackPanel>
+            <ListBox x:Name="filterListbox" Height="300" Margin="0, 5, 0, 5"></ListBox>
+            <Button x:Name="btnRemoveFilter" Content="Remove selected" Click="btnRemoveFilter_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>
